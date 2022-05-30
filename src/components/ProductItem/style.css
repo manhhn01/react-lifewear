@@ -1,0 +1,11 @@
+.group-product:hover .action-buttons{
+  @apply opacity-100 right-4 pointer-events-auto;
+}
+
+.group-product:hover .options-wrapper{
+  @apply bottom-16;
+}
+
+.group-product:hover .options{
+  @apply opacity-100 pointer-events-auto delay-100
+}

@@ -1,0 +1,36 @@
+.nav-slider.vertical .slick-prev {
+  width: 2rem;
+  height: 2rem;
+  left: 50%;
+  top: unset;
+  bottom: calc(100% - 0.3rem);
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.nav-slider.vertical .slick-next {
+  width: 2rem;
+  height: 2rem;
+  left: 50%;
+  top: calc(100% - 0.3rem);
+  transform: translateX(-50%);
+  z-index: 20;
+}
+
+.nav-slider.vertical .slick-prev::before,
+.nav-slider.vertical .slick-next::before {
+  content: unset;
+  display: none;
+}
+
+.slick-slide div {
+  outline: none;
+}
+
+.slick-disabled{
+  display: none !important;
+}
+
+.nav-slider.vertical .slick-current img{
+  border: 4px solid #EA691C;
+}

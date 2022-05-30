@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "**/src/**/*.js": "javascriptreact",
+    "**/*.css": "tailwindcss"
+  },
+  "cSpell.words": ["revslider"]
+}

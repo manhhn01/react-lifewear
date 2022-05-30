@@ -1,0 +1,36 @@
+.slick-slide {
+  line-height: 0;
+}
+
+.slick-dots {
+  bottom: 15px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: #ea691c;
+}
+
+.slick-slide div {
+  outline: none;
+}
+
+.banner-button {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.slick-active .banner-button {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 500ms 500ms ease;
+}
+.banner-header {
+  opacity: 0;
+  transform: translateY(-40px);
+}
+
+.slick-active .banner-header {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 500ms 500ms ease;
+}

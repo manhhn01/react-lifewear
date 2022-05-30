@@ -1,0 +1,63 @@
+module.exports = {
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        secondary: '#FF931F',
+        'secondary-lighter': '#FFA647',
+        'secondary-darker': '#B83700',
+        accent: '#34184E',
+        'accent-lighter': '#5d4671',
+      },
+      maxHeight: {
+        '70vh': '70vh',
+      },
+      transitionTimingFunction: {
+        'timing-1': 'cubic-bezier(0.45, -0.005, 0.020, 1)',
+        'timing-2': 'cubic-bezier(0.550, 0.055, 0.675, 0.190)',
+      },
+      fontFamily: {
+        inter: [
+          'Inter',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          'Oxygen',
+          'Ubuntu',
+          'Cantarell',
+          '"Open Sans"',
+          '"Helvetica Neue"',
+          'sans-serif',
+        ],
+        roboto: [
+          '"Roboto Condensed"',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          'Oxygen',
+          'Ubuntu',
+          'Cantarell',
+          '"Open Sans"',
+          '"Helvetica Neue"',
+          'sans-serif',
+        ],
+        poppins: [
+          'poppins',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
+          'Roboto',
+          'Oxygen',
+          'Ubuntu',
+          'Cantarell',
+          '"Open Sans"',
+          '"Helvetica Neue"',
+          'sans-serif',
+        ],
+      },
+    },
+  },
+  plugins: [],
+};
