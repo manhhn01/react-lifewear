@@ -35,24 +35,25 @@ function HomeBanner() {
         </div>
         <img
           className="object-cover w-full h-full"
-          src="//demo.uix.store/sober/wp-content/uploads/sites/2/revslider/clean/1.jpg"
+          src="/images/banner_1.jpg"
           alt="banner"
         />
       </div>
       <div className="relative w-full h-screen">
         <div className="absolute left-0 w-full tracking-wide text-center text-white -translate-y-1/2 font-inter top-1/2">
           <div className="mb-6 text-[2.6rem] font-thin leading-normal uppercase banner-header">
-            Hàng mới về
+            Chào hè rực rỡ <br />
+            Siêu sale giảm tới 40%
           </div>
           <div className="inline-flex">
             <Link
-              to={'/'}
+              to={'/collections/nam'}
               className="px-4 py-2 text-xl font-medium border-2 border-white banner-button"
             >
               Thời trang nam
             </Link>
             <Link
-              to={'/'}
+              to={'/collections/nu'}
               className="px-4 py-2 ml-10 text-xl font-medium border-2 border-white banner-button"
             >
               Thời trang nữ
@@ -61,7 +62,7 @@ function HomeBanner() {
         </div>
         <img
           className="object-cover w-full h-full"
-          src="//demo.uix.store/sober/wp-content/uploads/sites/2/revslider/clean/2.jpg"
+          src="/images/banner_2.jpg"
           alt="banner"
         />
       </div>

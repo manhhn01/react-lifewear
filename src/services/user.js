@@ -93,4 +93,12 @@ export class UserService {
 
     return errors;
   }
+
+  async likeReview(productId, reviewId, like = true) {
+    const { data } = await this.api.put(
+      `/api/products/${productId}/reviews/${reviewId}`,
+      { like }
+    );
+    return data;
+  }
 }

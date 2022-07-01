@@ -98,7 +98,11 @@ export const updateCartQuantity = createAsyncThunk(
       try {
         const products = await new CartService().updateQuantity(
           product,
-          cart_quantity
+          cart_quantity > product.quantity
+            ? product.quantity
+            : cart_quantity <= 0
+            ? 1
+            : cart_quantity
         );
         return thunkAPI.fulfillWithValue({ type: 'server', products });
       } catch ({ message }) {
@@ -206,9 +210,11 @@ export const cartSlice = createSlice({
         state.products = state.products.map((product) => {
           if (product.variant_id === action.payload.product.variant_id) {
             product.cart_quantity =
-              action.payload.new_quantity < product.remain_quantity
-                ? action.payload.new_quantity
-                : product.remain_quantity;
+              action.payload.new_quantity > product.remain_quantity
+                ? product.remain_quantity
+                : action.payload.new_quantity <= 0
+                ? 1
+                : action.payload.new_quantity;
           }
           return product;
         });

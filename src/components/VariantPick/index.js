@@ -22,6 +22,8 @@ function VariantPick({ product, onPreviewImageChange, ...props }) {
       case 'set':
         return action.payload.value > action.payload.max
           ? action.payload.max
+          : action.payload.value <= 0
+          ? 1
           : action.payload.value;
       default:
         throw new Error('Unknown action: ' + action.type);
@@ -260,15 +262,6 @@ function VariantPick({ product, onPreviewImageChange, ...props }) {
               <BiCheckDouble size="1.2rem" className="text-secondary-darker" />
             </div>
             <p className="">
-              Chất liệu: Vải Airycool cải tiến với thành phần 85% Freezing
-              Polyamide + 15% Spandex
-            </p>
-          </li>
-          <li className="flex items-start mb-1">
-            <div className="w-10 shrink-0 pt-0.5">
-              <BiCheckDouble size="1.2rem" className="text-secondary-darker" />
-            </div>
-            <p className="">
               Công nghệ làm mát FREEZING tiên tiến siêu khô thoáng
             </p>
           </li>
@@ -283,30 +276,6 @@ function VariantPick({ product, onPreviewImageChange, ...props }) {
               <BiCheckDouble size="1.2rem" className="text-secondary-darker" />
             </div>
             <p className="">Trong lượng nhẹ, thoáng khí hút ẩm cực tốt</p>
-          </li>
-          <li className="flex items-start mb-1">
-            <div className="w-10 shrink-0 pt-0.5">
-              <BiCheckDouble size="1.2rem" className="text-secondary-darker" />
-            </div>
-            <p className="">Thấm hút mồ hôi tốt</p>
-          </li>
-          <li className="flex items-start mb-1">
-            <div className="w-10 shrink-0 pt-0.5">
-              <BiCheckDouble size="1.2rem" className="text-secondary-darker" />
-            </div>
-            <p className="">Thấm hút mồ hôi tốt</p>
-          </li>
-          <li className="flex items-start mb-1">
-            <div className="w-10 shrink-0 pt-0.5">
-              <BiCheckDouble size="1.2rem" className="text-secondary-darker" />
-            </div>
-            <p className="">Thấm hút mồ hôi tốt</p>
-          </li>
-          <li className="flex items-start mb-1">
-            <div className="w-10 shrink-0 pt-0.5">
-              <BiCheckDouble size="1.2rem" className="text-secondary-darker" />
-            </div>
-            <p className="">Thấm hút mồ hôi tốt</p>
           </li>
         </ul>
       </div>

@@ -5,7 +5,7 @@ import RadioButton from '../../components/Input/RadioButton';
 import TextArea from '../../components/Input/TextArea';
 import Select from '../../components/Input/Select';
 import { currencyFormat } from '../../utils';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import CheckBox from '../../components/Input/CheckBox';
 import { DataService } from '../../services/data';
@@ -14,6 +14,8 @@ import toast from 'react-hot-toast';
 import { emptyCart, updateCart } from '../../reducer/cartSlice';
 
 function Checkout() {
+  const navigate = useNavigate();
+
   const [savedAddressOptions, setSavedAddressOptions] = useState([]);
   const [overlay, setOverlay] = useState(false);
   const [orderInfo, setOrderInfo] = useState({
@@ -75,8 +77,9 @@ function Checkout() {
     switch (orderInfo.paymentMethod) {
       case 'cod':
         if (result.status === 'success' && result.message) {
-          toast.success(result.message);
-          dispatch(emptyCart());
+          toast.success('Đặt hàng thành công');
+          navigate('/');
+          dispatch(emptyCart({ logout: false }));
         }
         break;
       case 'momo':
@@ -87,7 +90,8 @@ function Checkout() {
                 window.removeEventListener('message', handleM2Message);
                 setOverlay(false);
                 toast.success('Đặt hàng thành công');
-                dispatch(emptyCart());
+                navigate('/');
+                dispatch(emptyCart({ logout: false }));
               } else toast.error(event.data.error);
             }
           };
@@ -375,7 +379,7 @@ function Checkout() {
                     name="momo"
                     title="Thanh toán qua ví MoMo"
                   />
-                  <RadioButton
+                  {/* <RadioButton
                     icon={
                       <img
                         src="/images/icons/logovnpay.webp"
@@ -395,7 +399,7 @@ function Checkout() {
                     }}
                     name="qr_pay"
                     title="Thanh toán qua QR-Pay"
-                  />
+                  /> */}
                   <RadioButton
                     icon={
                       <img

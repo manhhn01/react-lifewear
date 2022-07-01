@@ -21,9 +21,14 @@ function Cart() {
     [cart]
   );
 
-  const r1 = useMemo(() => random(0, 1), []);
-
-  const r2 = useMemo(() => random(1, 15), []);
+  const r1 = useMemo(
+    () => Array(cart.length).map(() => random(0, 1)),
+    [cart.length]
+  );
+  const r2 = useMemo(
+    () => Array(cart.length).map(() => random(1, 15)),
+    [cart.length]
+  );
 
   const dispatch = useDispatch();
 
@@ -166,10 +171,11 @@ function Cart() {
                   </div>
 
                   {/* notif */}
-                  {r1 === 0 && (
+                  {r1[index] === 0 && (
                     <div className="relative px-4 py-2 text-white bg-orange-500/60 pr-14">
                       <p className="text-sm font-medium text-left sm:text-center">
-                        {r2} người khác đang có sản phẩm này trong giỏ hàng.{' '}
+                        {r2[index]} người khác đang có sản phẩm này trong giỏ
+                        hàng.{' '}
                         <Link
                           className="font-medium underline"
                           to={'/checkout'}

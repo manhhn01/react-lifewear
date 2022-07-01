@@ -44,6 +44,7 @@ function CategoryDetail() {
 
   useEffect(() => {
     const page = () => searchParams.get('page');
+    console.log('page', page());
     let timeout = setTimeout(() => {
       setLoading(true);
       if (!slug) {

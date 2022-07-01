@@ -1,16 +1,17 @@
 import { useSelector } from 'react-redux';
-import { Navigate, Outlet, useLocation, useRoutes } from 'react-router-dom';
+import { Navigate, useLocation, useRoutes } from 'react-router-dom';
 import DefaultLayout from '../layouts/DefaultLayout';
 import Cart from '../pages/Cart';
 import Category from '../pages/Category';
 import CategoryDetail from '../pages/Category/CategoryDetail';
 import Checkout from '../pages/Checkout';
 import Home from '../pages/Home';
+import NotFound from '../pages/NotFound';
 import ProductDetail from '../pages/ProductDetail';
 import Register from '../pages/Register';
 import Info from '../pages/User/Info';
 import Addresses from '../pages/User/Info/Addresses';
-import Notification from '../pages/User/Info/Notifcation';
+import Notification from '../pages/User/Info/Notification';
 import Orders from '../pages/User/Info/Orders';
 import UpdateInfo from '../pages/User/Info/UpdateInfo';
 import Login from '../pages/User/Login';
@@ -26,6 +27,10 @@ const AppRoutes = () => {
         {
           path: '/:slug',
           element: <ProductDetail />,
+        },
+        {
+          path: '/404',
+          element: <NotFound />,
         },
         {
           path: '/collections',

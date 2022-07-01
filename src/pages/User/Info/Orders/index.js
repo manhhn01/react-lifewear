@@ -102,7 +102,7 @@ function Orders() {
         {Array(orders.last_page)
           .fill()
           .map((_, index) => (
-            <li>
+            <li key={index}>
               <button
                 className={
                   'block w-8 h-8 leading-8 text-center border-2 rounded ' +

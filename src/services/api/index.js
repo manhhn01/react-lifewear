@@ -1,4 +1,4 @@
-import axios, { CanceledError } from 'axios';
+import axios from 'axios';
 
 export default class ApiService {
   constructor(config = {}) {

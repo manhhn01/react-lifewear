@@ -8,7 +8,7 @@ export class DataService {
 
   async getProducts({
     perpage = 20,
-    page,
+    page = 1,
     order,
     sortby,
     sizes = [],
@@ -36,11 +36,20 @@ export class DataService {
 
   async getCategory(
     idSlug,
-    { perpage = 20, order, sortby, sizes = [], colors = [], category_id }
+    {
+      perpage = 20,
+      order,
+      sortby,
+      sizes = [],
+      colors = [],
+      category_id,
+      page = 1,
+    }
   ) {
     const { data } = await this.api.get('/api/categories/' + idSlug, {
       params: {
         perpage,
+        page,
         sortby,
         category_id,
         order,
@@ -48,6 +57,12 @@ export class DataService {
         color: colors.join(','),
       },
     });
+    return data;
+  }
+
+  async getReviews(idSlug) {
+    const { data } = await this.api.get(`/api/products/${idSlug}/reviews`, {});
+    console.log(data);
     return data;
   }
 

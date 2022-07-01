@@ -103,9 +103,9 @@ function WishlistButton({ invertColor = false }) {
                   </li>
                 ))}
               </ul>
-              <button className="w-[calc(100%_-_2rem)] block mx-auto px-4 py-2 mb-4 text-gray-700 transition-colors bg-white border border-gray-700 rounded-sm text-md hover:text-secondary hover:border-secondary">
+              {/* <button className="w-[calc(100%_-_2rem)] block mx-auto px-4 py-2 mb-4 text-gray-700 transition-colors bg-white border border-gray-700 rounded-sm text-md hover:text-secondary hover:border-secondary">
                 Xem sản phẩm yêu thích
-              </button>
+              </button> */}
             </>
           ) : (
             <div className="flex flex-col items-center py-6 text-gray-500">

@@ -162,13 +162,13 @@ function SearchButton() {
                       </li>
                     ))}
                   </ul>
-                  <button
+                  {/* <button
                     type="button"
                     className="block px-3 py-2 mx-auto text-gray-600 transition-colors bg-white border-2 border-gray-600 rounded hover:border-secondary hover:text-secondary"
                     onClick={() => navigate('/search?q=' + searchInput)}
                   >
                     Hiển thị toàn bộ kết quả
-                  </button>
+                  </button> */}
                 </div>
               </CSSTransition>
             </div>

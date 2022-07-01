@@ -33,8 +33,8 @@ function Category() {
         <div className="flex flex-wrap -mx-6">
           {categories
             .flatMap((parentCategory) => [...parentCategory.children])
-            .map((category) => (
-              <div className="p-6 lg:w-1/3">
+            .map((category, index) => (
+              <div className="p-6 lg:w-1/3" key={index}>
                 <Link
                   to={'/collections/' + category.slug}
                   className=" block pt-[80%] relative overflow-hidden group"
